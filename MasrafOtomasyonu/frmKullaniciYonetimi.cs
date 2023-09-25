@@ -20,13 +20,27 @@ namespace MasrafOtomasyonu
 
         private void frmKullaniciYonetimi_Load(object sender, EventArgs e)
         {
+            YukleKullanicilari();
+
+            YukleKullaniciTipleri();
+
+        }
+
+        private void YukleKullaniciTipleri()
+        {
             List<KullaniciTipiEnumObjesi> kullaniciTipiListesi = EnumHelper.GetirKullaniciTipleriListe();
 
             //cmbKullaniciTipi.DisplayMember = "KullaniciTipAdi";
             //cmbKullaniciTipi.ValueMember = "KullaniciTipiDegeri";
             cmbKullaniciTipi.DataSource = null;
             cmbKullaniciTipi.DataSource = kullaniciTipiListesi;
+        }
 
+        private void YukleKullanicilari()
+        {
+            _kullanicilar = FileHelper.DosyadanOkuKullanicilar();
+            lstKullanicilar.DataSource = null;
+            lstKullanicilar.DataSource = _kullanicilar;
         }
 
         private void btnYeniEkle_Click(object sender, EventArgs e)
@@ -43,6 +57,8 @@ namespace MasrafOtomasyonu
 
             lstKullanicilar.DataSource = null;
             lstKullanicilar.DataSource = _kullanicilar;
+
+            FileHelper.DosyayaYazKullanicilar(_kullanicilar);
         }
     }
 
