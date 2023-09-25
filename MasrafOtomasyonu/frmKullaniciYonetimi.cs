@@ -118,7 +118,7 @@ namespace MasrafOtomasyonu
         {
             Temizle();
             lblTamAd.Text = "Ad Soyad: " + seciliKullanici.TamAdi;
-            lblKullaniciAdi.Text ="Kullanıcı Adı: " + seciliKullanici.KullaniciAdi;
+            lblKullaniciAdi.Text = "Kullanıcı Adı: " + seciliKullanici.KullaniciAdi;
             lblSifre.Text = "Şifre: " + seciliKullanici.Sifre;
             lblKullaniciTipi.Text = "Tipi: " + EnumHelper.GetirKullaniciTipiAdi(seciliKullanici.Tipi);
             lblYoneticiAdi.Text = "Yönetici: " + GetirKullaniciAdi(seciliKullanici.YoneticiId);
@@ -151,6 +151,27 @@ namespace MasrafOtomasyonu
             }
 
             return adi;
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            if (lstKullanicilar.SelectedIndex == -1)
+            {
+                Temizle();
+                return;
+            }
+
+            Kullanici seciliKullanici = lstKullanicilar.SelectedItem as Kullanici;
+            seciliKullanici.TamAdi = txtAdSoyad.Text.Trim();
+            seciliKullanici.KullaniciAdi = txtKullaniciAdi.Text.Trim();
+            seciliKullanici.Sifre = txtSifre.Text;
+            seciliKullanici.Tipi = (KullaniciTipi)cmbKullaniciTipi.SelectedValue;
+            seciliKullanici.YoneticiId = (Guid)cmbYonetici.SelectedValue;
+
+            lstKullanicilar.DataSource = null;  
+            lstKullanicilar.DataSource = _kullanicilar;
+
+            FileHelper.DosyayaYazKullanicilar(_kullanicilar);
         }
     }
 
