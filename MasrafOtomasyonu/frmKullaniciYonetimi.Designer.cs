@@ -112,6 +112,7 @@
             this.lstKullanicilar.Name = "lstKullanicilar";
             this.lstKullanicilar.Size = new System.Drawing.Size(298, 521);
             this.lstKullanicilar.TabIndex = 0;
+            this.lstKullanicilar.SelectedIndexChanged += new System.EventHandler(this.lstKullanicilar_SelectedIndexChanged);
             // 
             // groupBox3
             // 

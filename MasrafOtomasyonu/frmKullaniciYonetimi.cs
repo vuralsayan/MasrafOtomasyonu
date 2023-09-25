@@ -91,8 +91,68 @@ namespace MasrafOtomasyonu
             txtAdSoyad.Text = "";
             txtKullaniciAdi.Text = "";
             txtSifre.Text = "";
+            cmbKullaniciTipi.SelectedIndex = -1;
+            cmbYonetici.SelectedIndex = -1;
+
+            lblTamAd.Text = "Ad Soyad: ---";
+            lblKullaniciAdi.Text = "Kullanıcı Adı: ---";
+            lblSifre.Text = "Şifre: ---";
+            lblKullaniciTipi.Text = "Tipi: ---";
+            lblYoneticiAdi.Text = "Yönetici: ---";
+        }
+
+        private void lstKullanicilar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstKullanicilar.SelectedIndex == -1)
+            {
+                Temizle();
+                return;
+            }
+
+            Kullanici seciliKullanici = lstKullanicilar.SelectedItem as Kullanici;
+            YukleKullaniciVerisi(seciliKullanici);
+
+        }
+
+        private void YukleKullaniciVerisi(Kullanici seciliKullanici)
+        {
+            Temizle();
+            lblTamAd.Text = "Ad Soyad: " + seciliKullanici.TamAdi;
+            lblKullaniciAdi.Text ="Kullanıcı Adı: " + seciliKullanici.KullaniciAdi;
+            lblSifre.Text = "Şifre: " + seciliKullanici.Sifre;
+            lblKullaniciTipi.Text = "Tipi: " + EnumHelper.GetirKullaniciTipiAdi(seciliKullanici.Tipi);
+            lblYoneticiAdi.Text = "Yönetici: " + GetirKullaniciAdi(seciliKullanici.YoneticiId);
+
+            txtAdSoyad.Text = seciliKullanici.TamAdi;
+            txtKullaniciAdi.Text = seciliKullanici.KullaniciAdi;
+            txtSifre.Text = seciliKullanici.Sifre;
+            cmbKullaniciTipi.SelectedValue = (int)seciliKullanici.Tipi;
+
+            if (seciliKullanici.YoneticiId != null)
+            {
+                cmbYonetici.SelectedValue = seciliKullanici.YoneticiId;
+            }
+        }
+
+        private string GetirKullaniciAdi(Guid? kullaniciId)
+        {
+            string adi = "";
+
+            if (kullaniciId != null)
+            {
+                foreach (Kullanici kullanici in _kullanicilar)
+                {
+                    if (kullanici.Id == kullaniciId)
+                    {
+                        adi = kullanici.TamAdi;
+                        break;
+                    }
+                }
+            }
+
+            return adi;
         }
     }
 
-    
+
 }
