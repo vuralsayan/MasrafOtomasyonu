@@ -173,6 +173,41 @@ namespace MasrafOtomasyonu
 
             FileHelper.DosyayaYazKullanicilar(_kullanicilar);
         }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (lstKullanicilar.SelectedIndex == -1)
+            {
+                Temizle();
+                return;
+            }
+
+
+            Kullanici seciliKullanici = lstKullanicilar.SelectedItem as Kullanici;
+            DialogResult result = MessageBox.Show($"{seciliKullanici.TamAdi} adlı kullanıcıyı silmek istediğinize emin misiniz?", "Kullanıcı Silme", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3);
+            if (result == DialogResult.Yes)
+            {
+                if (seciliKullanici.Tipi == KullaniciTipi.yonetici)
+                {
+                    foreach (Kullanici kullanici in _kullanicilar)
+                    {
+                        if (kullanici.YoneticiId == seciliKullanici.Id)
+                        {
+                            kullanici.YoneticiId = null;
+                        }
+                    }
+                }
+
+
+
+                _kullanicilar.Remove(seciliKullanici);
+
+                lstKullanicilar.DataSource = null;
+                lstKullanicilar.DataSource = _kullanicilar;
+
+                FileHelper.DosyayaYazKullanicilar(_kullanicilar);
+            }
+        }
     }
 
 
