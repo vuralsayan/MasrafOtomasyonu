@@ -30,6 +30,7 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lstKullanicilar = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.lblSifre = new System.Windows.Forms.Label();
             this.lblKullaniciTipi = new System.Windows.Forms.Label();
             this.lblYoneticiAdi = new System.Windows.Forms.Label();
-            this.lstKullanicilar = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -86,7 +86,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
             this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.splitContainer1.Size = new System.Drawing.Size(753, 570);
-            this.splitContainer1.SplitterDistance = 325;
+            this.splitContainer1.SplitterDistance = 326;
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -98,10 +98,20 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(8);
-            this.groupBox1.Size = new System.Drawing.Size(313, 556);
+            this.groupBox1.Size = new System.Drawing.Size(314, 556);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kullanıcılar";
+            // 
+            // lstKullanicilar
+            // 
+            this.lstKullanicilar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstKullanicilar.FormattingEnabled = true;
+            this.lstKullanicilar.ItemHeight = 20;
+            this.lstKullanicilar.Location = new System.Drawing.Point(8, 27);
+            this.lstKullanicilar.Name = "lstKullanicilar";
+            this.lstKullanicilar.Size = new System.Drawing.Size(298, 521);
+            this.lstKullanicilar.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -110,7 +120,7 @@
             this.groupBox3.Location = new System.Drawing.Point(6, 7);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(8);
-            this.groupBox3.Size = new System.Drawing.Size(413, 365);
+            this.groupBox3.Size = new System.Drawing.Size(412, 365);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ekleme/Güncelleme/Silme";
@@ -132,7 +142,7 @@
             this.flowLayoutPanel2.Location = new System.Drawing.Point(8, 27);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(397, 330);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(396, 330);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // label1
@@ -232,6 +242,7 @@
             this.btnYeniEkle.TabIndex = 2;
             this.btnYeniEkle.Text = "Yeni Ekle";
             this.btnYeniEkle.UseVisualStyleBackColor = true;
+            this.btnYeniEkle.Click += new System.EventHandler(this.btnYeniEkle_Click);
             // 
             // btnKaydet
             // 
@@ -258,7 +269,7 @@
             this.groupBox2.Location = new System.Drawing.Point(6, 372);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(8);
-            this.groupBox2.Size = new System.Drawing.Size(413, 191);
+            this.groupBox2.Size = new System.Drawing.Size(412, 191);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kullanıcı Detay";
@@ -274,7 +285,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 27);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(397, 156);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(396, 156);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // lblTamAd
@@ -326,16 +337,6 @@
             this.lblYoneticiAdi.Size = new System.Drawing.Size(104, 20);
             this.lblYoneticiAdi.TabIndex = 4;
             this.lblYoneticiAdi.Text = "lblYoneticiAdi";
-            // 
-            // lstKullanicilar
-            // 
-            this.lstKullanicilar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstKullanicilar.FormattingEnabled = true;
-            this.lstKullanicilar.ItemHeight = 20;
-            this.lstKullanicilar.Location = new System.Drawing.Point(8, 27);
-            this.lstKullanicilar.Name = "lstKullanicilar";
-            this.lstKullanicilar.Size = new System.Drawing.Size(297, 521);
-            this.lstKullanicilar.TabIndex = 0;
             // 
             // frmKullaniciYonetimi
             // 

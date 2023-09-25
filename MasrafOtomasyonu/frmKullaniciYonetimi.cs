@@ -12,6 +12,7 @@ namespace MasrafOtomasyonu
 {
     public partial class frmKullaniciYonetimi : Form
     {
+        List<Kullanici> _kullanicilar = new List<Kullanici>();
         public frmKullaniciYonetimi()
         {
             InitializeComponent();
@@ -26,6 +27,22 @@ namespace MasrafOtomasyonu
             cmbKullaniciTipi.DataSource = null;
             cmbKullaniciTipi.DataSource = kullaniciTipiListesi;
 
+        }
+
+        private void btnYeniEkle_Click(object sender, EventArgs e)
+        {
+            Kullanici kullanici = new Kullanici();
+            kullanici.Id = Guid.NewGuid();
+            kullanici.TamAdi = txtAdSoyad.Text.Trim();
+            kullanici.KullaniciAdi = txtKullaniciAdi.Text.Trim();
+            kullanici.Sifre = txtSifre.Text;
+            kullanici.Tipi = (KullaniciTipi)cmbKullaniciTipi.SelectedIndex;
+            kullanici.YoneticiId = null;
+
+            _kullanicilar.Add(kullanici);
+
+            lstKullanicilar.DataSource = null;
+            lstKullanicilar.DataSource = _kullanicilar;
         }
     }
 

@@ -20,6 +20,11 @@ namespace MasrafOtomasyonu
         public KullaniciTipi Tipi { get; set; } 
 
         public Guid? YoneticiId { get; set; }
+
+        public override string ToString()
+        {
+            return $"{TamAdi} ({KullaniciAdi}) ({EnumHelper.GetirKullaniciTipiAdi(Tipi)}))";
+        }
     }
 
     public enum KullaniciTipi
