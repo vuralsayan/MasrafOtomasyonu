@@ -50,7 +50,7 @@ namespace MasrafOtomasyonu
             kullanici.TamAdi = txtAdSoyad.Text.Trim();
             kullanici.KullaniciAdi = txtKullaniciAdi.Text.Trim();
             kullanici.Sifre = txtSifre.Text;
-            kullanici.Tipi = (KullaniciTipi)cmbKullaniciTipi.SelectedIndex;
+            kullanici.Tipi = (KullaniciTipi)cmbKullaniciTipi.SelectedValue;
             kullanici.YoneticiId = null;
 
             _kullanicilar.Add(kullanici);
@@ -59,6 +59,14 @@ namespace MasrafOtomasyonu
             lstKullanicilar.DataSource = _kullanicilar;
 
             FileHelper.DosyayaYazKullanicilar(_kullanicilar);
+            Temizle();
+        }
+
+        private void Temizle()
+        {
+            txtAdSoyad.Text = "";
+            txtKullaniciAdi.Text = "";
+            txtSifre.Text = "";
         }
     }
 

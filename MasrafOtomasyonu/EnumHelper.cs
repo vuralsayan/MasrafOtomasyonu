@@ -31,8 +31,8 @@ namespace MasrafOtomasyonu
             }
 
 
-
             return sonuc;
+
         }
 
         public static List<KullaniciTipiEnumObjesi> GetirKullaniciTipleriListe()
