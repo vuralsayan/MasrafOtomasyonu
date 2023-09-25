@@ -21,9 +21,17 @@ namespace MasrafOtomasyonu
         private void frmKullaniciYonetimi_Load(object sender, EventArgs e)
         {
             YukleKullanicilari();
-
+            YukleYoneticileri();
             YukleKullaniciTipleri();
 
+        }
+
+        private void YukleYoneticileri()
+        {
+            cmbYonetici.DisplayMember = "TamAdi";
+            cmbYonetici.ValueMember = "Id";
+            cmbYonetici.DataSource = null;
+            cmbYonetici.DataSource = GetirYoneticiler();
         }
 
         private void YukleKullaniciTipleri()
@@ -43,6 +51,22 @@ namespace MasrafOtomasyonu
             lstKullanicilar.DataSource = _kullanicilar;
         }
 
+        private List<Kullanici> GetirYoneticiler()
+        {
+            List<Kullanici> liste = new List<Kullanici>();
+
+            foreach (Kullanici kullanici in _kullanicilar)
+            {
+                if (kullanici.Tipi == KullaniciTipi.yonetici)
+                {
+                    liste.Add(kullanici);
+                }
+            }
+
+
+            return liste;
+        }
+
         private void btnYeniEkle_Click(object sender, EventArgs e)
         {
             Kullanici kullanici = new Kullanici();
@@ -51,7 +75,7 @@ namespace MasrafOtomasyonu
             kullanici.KullaniciAdi = txtKullaniciAdi.Text.Trim();
             kullanici.Sifre = txtSifre.Text;
             kullanici.Tipi = (KullaniciTipi)cmbKullaniciTipi.SelectedValue;
-            kullanici.YoneticiId = null;
+            kullanici.YoneticiId = (Guid)cmbYonetici.SelectedValue;
 
             _kullanicilar.Add(kullanici);
 
