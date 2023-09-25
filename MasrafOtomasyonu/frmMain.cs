@@ -16,5 +16,12 @@ namespace MasrafOtomasyonu
         {
             InitializeComponent();
         }
+
+        private void mnuKullaniciYonetimi_Click(object sender, EventArgs e)
+        {
+            frmKullaniciYonetimi frm = new frmKullaniciYonetimi();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

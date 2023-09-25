@@ -61,7 +61,7 @@
             this.mnuHakkinda});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -92,7 +92,7 @@
             this.mnuKullaniciYonetimi,
             this.mnuMasrafHarcamaTipleri});
             this.mnuYonetim.Name = "mnuYonetim";
-            this.mnuYonetim.Size = new System.Drawing.Size(92, 32);
+            this.mnuYonetim.Size = new System.Drawing.Size(92, 29);
             this.mnuYonetim.Text = "Yönetim";
             // 
             // mnuMasrafYonetimi
@@ -142,6 +142,7 @@
             this.mnuKullaniciYonetimi.Name = "mnuKullaniciYonetimi";
             this.mnuKullaniciYonetimi.Size = new System.Drawing.Size(297, 34);
             this.mnuKullaniciYonetimi.Text = "Kullanıcı Yönetimi";
+            this.mnuKullaniciYonetimi.Click += new System.EventHandler(this.mnuKullaniciYonetimi_Click);
             // 
             // mnuMasrafHarcamaTipleri
             // 

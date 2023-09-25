@@ -17,5 +17,17 @@ namespace MasrafOtomasyonu
             InitializeComponent();
         }
 
+        private void frmKullaniciYonetimi_Load(object sender, EventArgs e)
+        {
+            List<KullaniciTipiEnumObjesi> kullaniciTipiListesi = EnumHelper.GetirKullaniciTipleriListe();
+
+            //cmbKullaniciTipi.DisplayMember = "KullaniciTipAdi";
+            //cmbKullaniciTipi.ValueMember = "KullaniciTipiDegeri";
+            cmbKullaniciTipi.DataSource = null;
+            cmbKullaniciTipi.DataSource = kullaniciTipiListesi;
+
+        }
     }
+
+    
 }

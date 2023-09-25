@@ -85,8 +85,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.groupBox3);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
             this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            this.splitContainer1.Size = new System.Drawing.Size(877, 603);
-            this.splitContainer1.SplitterDistance = 449;
+            this.splitContainer1.Size = new System.Drawing.Size(753, 570);
+            this.splitContainer1.SplitterDistance = 325;
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -98,7 +98,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(8);
-            this.groupBox1.Size = new System.Drawing.Size(437, 589);
+            this.groupBox1.Size = new System.Drawing.Size(313, 556);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kullanıcılar";
@@ -110,7 +110,7 @@
             this.groupBox3.Location = new System.Drawing.Point(6, 7);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(8);
-            this.groupBox3.Size = new System.Drawing.Size(413, 384);
+            this.groupBox3.Size = new System.Drawing.Size(413, 365);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ekleme/Güncelleme/Silme";
@@ -132,7 +132,7 @@
             this.flowLayoutPanel2.Location = new System.Drawing.Point(8, 27);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(397, 349);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(397, 330);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // label1
@@ -190,11 +190,13 @@
             // 
             // cmbKullaniciTipi
             // 
+            this.cmbKullaniciTipi.DisplayMember = "KullaniciTipAdi";
             this.cmbKullaniciTipi.FormattingEnabled = true;
             this.cmbKullaniciTipi.Location = new System.Drawing.Point(3, 187);
             this.cmbKullaniciTipi.Name = "cmbKullaniciTipi";
             this.cmbKullaniciTipi.Size = new System.Drawing.Size(386, 28);
             this.cmbKullaniciTipi.TabIndex = 7;
+            this.cmbKullaniciTipi.ValueMember = "KullaniciTipiDegeri";
             // 
             // label5
             // 
@@ -219,14 +221,14 @@
             this.flowLayoutPanel3.Controls.Add(this.btnSil);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 275);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(389, 71);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(389, 66);
             this.flowLayoutPanel3.TabIndex = 10;
             // 
             // btnYeniEkle
             // 
             this.btnYeniEkle.Location = new System.Drawing.Point(3, 3);
             this.btnYeniEkle.Name = "btnYeniEkle";
-            this.btnYeniEkle.Size = new System.Drawing.Size(122, 58);
+            this.btnYeniEkle.Size = new System.Drawing.Size(122, 53);
             this.btnYeniEkle.TabIndex = 2;
             this.btnYeniEkle.Text = "Yeni Ekle";
             this.btnYeniEkle.UseVisualStyleBackColor = true;
@@ -235,7 +237,7 @@
             // 
             this.btnKaydet.Location = new System.Drawing.Point(131, 3);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(122, 58);
+            this.btnKaydet.Size = new System.Drawing.Size(122, 53);
             this.btnKaydet.TabIndex = 3;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -244,7 +246,7 @@
             // 
             this.btnSil.Location = new System.Drawing.Point(259, 3);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(122, 58);
+            this.btnSil.Size = new System.Drawing.Size(122, 53);
             this.btnSil.TabIndex = 4;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
@@ -253,10 +255,10 @@
             // 
             this.groupBox2.Controls.Add(this.flowLayoutPanel1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(6, 391);
+            this.groupBox2.Location = new System.Drawing.Point(6, 372);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(8);
-            this.groupBox2.Size = new System.Drawing.Size(413, 205);
+            this.groupBox2.Size = new System.Drawing.Size(413, 191);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kullanıcı Detay";
@@ -272,7 +274,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 27);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(397, 170);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(397, 156);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // lblTamAd
@@ -332,19 +334,20 @@
             this.lstKullanicilar.ItemHeight = 20;
             this.lstKullanicilar.Location = new System.Drawing.Point(8, 27);
             this.lstKullanicilar.Name = "lstKullanicilar";
-            this.lstKullanicilar.Size = new System.Drawing.Size(421, 554);
+            this.lstKullanicilar.Size = new System.Drawing.Size(297, 521);
             this.lstKullanicilar.TabIndex = 0;
             // 
             // frmKullaniciYonetimi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 603);
+            this.ClientSize = new System.Drawing.Size(753, 570);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Name = "frmKullaniciYonetimi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Kullanıcı Yönetimi";
+            this.Load += new System.EventHandler(this.frmKullaniciYonetimi_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
