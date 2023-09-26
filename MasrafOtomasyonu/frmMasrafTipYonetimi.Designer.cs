@@ -87,6 +87,7 @@
             this.btnKaydet.TabIndex = 6;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnSil
             // 
@@ -96,6 +97,7 @@
             this.btnSil.TabIndex = 7;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // panel1
             // 
@@ -114,6 +116,7 @@
             this.lstMasrafTipleri.Name = "lstMasrafTipleri";
             this.lstMasrafTipleri.Size = new System.Drawing.Size(611, 321);
             this.lstMasrafTipleri.TabIndex = 2;
+            this.lstMasrafTipleri.SelectedIndexChanged += new System.EventHandler(this.lstMasrafTipleri_SelectedIndexChanged);
             // 
             // frmMasrafTipYonetimi
             // 
