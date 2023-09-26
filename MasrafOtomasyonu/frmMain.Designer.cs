@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.mnuDosya = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuYonetim = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMasrafYonetimi = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuRaporlar = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuHakkinda = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOturumKapat = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuCikis = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuYonetim = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuKullaniciYonetimi = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMasrafHarcamaTipleri = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMasrafYonetimi = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMasraflar = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRaporlar = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPersonelRaporu = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMasrafHarcamaRaporu = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuHakkinda = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuUygulamaHakkinda = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblGirisYapan = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -64,17 +64,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(800, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblGirisYapan});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 418);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 32);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
+            this.menuStrip1.Visible = false;
             // 
             // mnuDosya
             // 
@@ -83,8 +73,25 @@
             this.toolStripMenuItem1,
             this.mnuCikis});
             this.mnuDosya.Name = "mnuDosya";
-            this.mnuDosya.Size = new System.Drawing.Size(78, 32);
+            this.mnuDosya.Size = new System.Drawing.Size(78, 29);
             this.mnuDosya.Text = "Dosya";
+            // 
+            // mnuOturumKapat
+            // 
+            this.mnuOturumKapat.Name = "mnuOturumKapat";
+            this.mnuOturumKapat.Size = new System.Drawing.Size(236, 34);
+            this.mnuOturumKapat.Text = "Oturumu Kapat";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(233, 6);
+            // 
+            // mnuCikis
+            // 
+            this.mnuCikis.Name = "mnuCikis";
+            this.mnuCikis.Size = new System.Drawing.Size(236, 34);
+            this.mnuCikis.Text = "Çıkış";
             // 
             // mnuYonetim
             // 
@@ -94,48 +101,6 @@
             this.mnuYonetim.Name = "mnuYonetim";
             this.mnuYonetim.Size = new System.Drawing.Size(92, 29);
             this.mnuYonetim.Text = "Yönetim";
-            // 
-            // mnuMasrafYonetimi
-            // 
-            this.mnuMasrafYonetimi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuMasraflar});
-            this.mnuMasrafYonetimi.Name = "mnuMasrafYonetimi";
-            this.mnuMasrafYonetimi.Size = new System.Drawing.Size(155, 32);
-            this.mnuMasrafYonetimi.Text = "Masraf Yönetimi";
-            // 
-            // mnuRaporlar
-            // 
-            this.mnuRaporlar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuPersonelRaporu,
-            this.mnuMasrafHarcamaRaporu});
-            this.mnuRaporlar.Name = "mnuRaporlar";
-            this.mnuRaporlar.Size = new System.Drawing.Size(95, 32);
-            this.mnuRaporlar.Text = "Raporlar";
-            // 
-            // mnuHakkinda
-            // 
-            this.mnuHakkinda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuUygulamaHakkinda});
-            this.mnuHakkinda.Name = "mnuHakkinda";
-            this.mnuHakkinda.Size = new System.Drawing.Size(102, 32);
-            this.mnuHakkinda.Text = "Hakkında";
-            // 
-            // mnuOturumKapat
-            // 
-            this.mnuOturumKapat.Name = "mnuOturumKapat";
-            this.mnuOturumKapat.Size = new System.Drawing.Size(270, 34);
-            this.mnuOturumKapat.Text = "Oturumu Kapat";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(267, 6);
-            // 
-            // mnuCikis
-            // 
-            this.mnuCikis.Name = "mnuCikis";
-            this.mnuCikis.Size = new System.Drawing.Size(270, 34);
-            this.mnuCikis.Text = "Çıkış";
             // 
             // mnuKullaniciYonetimi
             // 
@@ -150,11 +115,28 @@
             this.mnuMasrafHarcamaTipleri.Size = new System.Drawing.Size(297, 34);
             this.mnuMasrafHarcamaTipleri.Text = "Masraf/Harcama Tipleri";
             // 
+            // mnuMasrafYonetimi
+            // 
+            this.mnuMasrafYonetimi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMasraflar});
+            this.mnuMasrafYonetimi.Name = "mnuMasrafYonetimi";
+            this.mnuMasrafYonetimi.Size = new System.Drawing.Size(155, 29);
+            this.mnuMasrafYonetimi.Text = "Masraf Yönetimi";
+            // 
             // mnuMasraflar
             // 
             this.mnuMasraflar.Name = "mnuMasraflar";
-            this.mnuMasraflar.Size = new System.Drawing.Size(270, 34);
+            this.mnuMasraflar.Size = new System.Drawing.Size(187, 34);
             this.mnuMasraflar.Text = "Masraflar";
+            // 
+            // mnuRaporlar
+            // 
+            this.mnuRaporlar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuPersonelRaporu,
+            this.mnuMasrafHarcamaRaporu});
+            this.mnuRaporlar.Name = "mnuRaporlar";
+            this.mnuRaporlar.Size = new System.Drawing.Size(95, 29);
+            this.mnuRaporlar.Text = "Raporlar";
             // 
             // mnuPersonelRaporu
             // 
@@ -168,11 +150,30 @@
             this.mnuMasrafHarcamaRaporu.Size = new System.Drawing.Size(308, 34);
             this.mnuMasrafHarcamaRaporu.Text = "Masraf/Harcama Raporu";
             // 
+            // mnuHakkinda
+            // 
+            this.mnuHakkinda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuUygulamaHakkinda});
+            this.mnuHakkinda.Name = "mnuHakkinda";
+            this.mnuHakkinda.Size = new System.Drawing.Size(102, 29);
+            this.mnuHakkinda.Text = "Hakkında";
+            // 
             // mnuUygulamaHakkinda
             // 
             this.mnuUygulamaHakkinda.Name = "mnuUygulamaHakkinda";
             this.mnuUygulamaHakkinda.Size = new System.Drawing.Size(273, 34);
             this.mnuUygulamaHakkinda.Text = "Uygulama Hakkında";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblGirisYapan});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 418);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(800, 32);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // lblGirisYapan
             // 
@@ -194,6 +195,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Masraf Otomasyonu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
