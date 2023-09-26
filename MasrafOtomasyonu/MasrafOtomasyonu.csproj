@@ -76,6 +76,12 @@
   <ItemGroup>
     <Compile Include="EnumHelper.cs" />
     <Compile Include="FileHelper.cs" />
+    <Compile Include="frmGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGiris.Designer.cs">
+      <DependentUpon>frmGiris.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmKullaniciYonetimi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     <Compile Include="Kullanici.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmGiris.resx">
+      <DependentUpon>frmGiris.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmKullaniciYonetimi.resx">
       <DependentUpon>frmKullaniciYonetimi.cs</DependentUpon>
     </EmbeddedResource>
