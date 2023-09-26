@@ -133,5 +133,12 @@ namespace MasrafOtomasyonu
 
             }
         }
+
+        private void mnuUygulamaHakkinda_Click(object sender, EventArgs e)
+        {
+            frmHakkinda frm = new frmHakkinda();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

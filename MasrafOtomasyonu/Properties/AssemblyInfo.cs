@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("MasrafOtomasyonu")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Masraf otomasyonu yapılan harcamaların tutulması ve raporlanması . Yöneticiler çalışanların masraflarını onaylar , onaylanan masraflar muhasebeye gider. Muhasebe ödeme yapınca süreç tamamlanır.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("erdemir")]
 [assembly: AssemblyProduct("MasrafOtomasyonu")]
