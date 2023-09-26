@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -26,7 +27,41 @@ namespace MasrafOtomasyonu
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            AdminKullaniciEkle();
+
             GosterGirisFormu();
+        }
+
+        private void AdminKullaniciEkle()
+        {
+            string adminKullaniciAdi = ConfigurationManager.AppSettings["AdminKullaniciAdi"];
+            string adminSifre = ConfigurationManager.AppSettings["AdminSifre"];
+            bool adminVarMi = false;
+
+            List<Kullanici> kullanicilar = FileHelper.DosyadanOkuKullanicilar();
+            foreach (Kullanici kullanici in kullanicilar)
+            {
+                if (kullanici.KullaniciAdi == adminKullaniciAdi)        // admin varsa çık
+                {
+                    adminVarMi = true;
+                    break;
+                }
+            }
+
+            if (adminVarMi == false)                // admin yoksa oluştur
+            {
+                kullanicilar.Add(new Kullanici
+                {
+                    Id = Guid.NewGuid(),
+                    KullaniciAdi = adminKullaniciAdi,
+                    Sifre = adminSifre,
+                    TamAdi = "Admin",
+                    Tipi = KullaniciTipi.admin
+                });
+
+                FileHelper.DosyayaYazKullanicilar(kullanicilar);
+            }
+
         }
 
         private void GosterGirisFormu()
