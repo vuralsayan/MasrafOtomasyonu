@@ -26,6 +26,11 @@ namespace MasrafOtomasyonu
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            GosterGirisFormu();
+        }
+
+        private void GosterGirisFormu()
+        {
             frmGiris frm = new frmGiris();
             frm.MdiParent = this;
             frm.FormClosed += Frm_FormClosed;
@@ -61,6 +66,36 @@ namespace MasrafOtomasyonu
                     default:
                         break;
                 }
+            }
+        }
+
+        private void mnuCikis_Click(object sender, EventArgs e)
+        {
+            DialogResult sonuc = MessageBox.Show("Uygulamadan çıkmak istediğinize emin misiniz?", "Uygulamadan Çıkış", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+            if (sonuc == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void mnuOturumKapat_Click(object sender, EventArgs e)
+        {
+            DialogResult sonuc = MessageBox.Show("Oturumu kapatmak istediğinize emin misiniz?", "Oturumu Kapat", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+            if (sonuc == DialogResult.Yes)
+            {
+                Degiskenler.GirisYapanKullanici = null;
+                lblGirisYapan.Text = "---";
+
+
+                foreach (Form form in this.MdiChildren)
+                {
+                    form.Close();
+                }
+                menuStrip1.Visible = false;
+                GosterGirisFormu();
+
             }
         }
     }

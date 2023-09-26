@@ -79,8 +79,9 @@
             // mnuOturumKapat
             // 
             this.mnuOturumKapat.Name = "mnuOturumKapat";
-            this.mnuOturumKapat.Size = new System.Drawing.Size(236, 34);
+            this.mnuOturumKapat.Size = new System.Drawing.Size(270, 34);
             this.mnuOturumKapat.Text = "Oturumu Kapat";
+            this.mnuOturumKapat.Click += new System.EventHandler(this.mnuOturumKapat_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -90,8 +91,9 @@
             // mnuCikis
             // 
             this.mnuCikis.Name = "mnuCikis";
-            this.mnuCikis.Size = new System.Drawing.Size(236, 34);
+            this.mnuCikis.Size = new System.Drawing.Size(270, 34);
             this.mnuCikis.Text = "Çıkış";
+            this.mnuCikis.Click += new System.EventHandler(this.mnuCikis_Click);
             // 
             // mnuYonetim
             // 
