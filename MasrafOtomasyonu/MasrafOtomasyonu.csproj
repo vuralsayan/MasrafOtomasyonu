@@ -118,6 +118,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMasrafTipYonetimi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMasrafTipYonetimi.Designer.cs">
+      <DependentUpon>frmMasrafTipYonetimi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kullanici.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMasrafTipYonetimi.resx">
+      <DependentUpon>frmMasrafTipYonetimi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
