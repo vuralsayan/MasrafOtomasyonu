@@ -54,8 +54,8 @@ namespace MasrafOtomasyonu
         {
             JsonSerializerOptions options = new JsonSerializerOptions()
             {
-                PropertyNameCaseInsensitive = true,
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                PropertyNameCaseInsensitive = true,                     
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,     
                 WriteIndented = true
             };
 
