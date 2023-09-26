@@ -13,6 +13,7 @@ namespace MasrafOtomasyonu
     public static class FileHelper
     {
         private static string _kullanicilarDosyaYolu = Application.StartupPath + "\\kullanicilar.json";
+        private static string _masrafTipleriDosyaYolu = Application.StartupPath + "\\masraf_tipleri.json";
         public static void DosyayaYazKullanicilar(List<Kullanici> kullanicilar)
         {
             string json = JsonSerializer.Serialize<List<Kullanici>>(kullanicilar, GetirJsonDosyaAyarlari());
@@ -28,8 +29,26 @@ namespace MasrafOtomasyonu
             }
 
             return new List<Kullanici>();
-
         }
+
+        public static void DosyayaYazMasrafTipleri(List<string> masrafTipleri)
+        {
+            string json = JsonSerializer.Serialize<List<string>>(masrafTipleri, GetirJsonDosyaAyarlari());
+            File.WriteAllText(_masrafTipleriDosyaYolu, json);
+        }
+
+        public static List<string> DosyadanOkuMasrafTipleri()
+        {
+            if (File.Exists(_masrafTipleriDosyaYolu))
+            {
+                string json = File.ReadAllText(_masrafTipleriDosyaYolu);
+                return JsonSerializer.Deserialize<List<string>>(json, GetirJsonDosyaAyarlari());
+            }
+
+            return new List<string>();
+        }
+
+
 
         private static JsonSerializerOptions GetirJsonDosyaAyarlari()
         {

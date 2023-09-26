@@ -77,6 +77,7 @@
             this.btnYeniEkle.TabIndex = 5;
             this.btnYeniEkle.Text = "Yeni Ekle";
             this.btnYeniEkle.UseVisualStyleBackColor = true;
+            this.btnYeniEkle.Click += new System.EventHandler(this.btnYeniEkle_Click);
             // 
             // btnKaydet
             // 
@@ -128,6 +129,7 @@
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Masraf Tipleri";
+            this.Load += new System.EventHandler(this.frmMasrafTipYonetimi_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
