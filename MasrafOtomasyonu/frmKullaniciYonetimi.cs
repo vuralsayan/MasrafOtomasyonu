@@ -28,10 +28,10 @@ namespace MasrafOtomasyonu
 
         private void YukleYoneticileri()
         {
-            cmbYonetici.DisplayMember = "TamAdi";
-            cmbYonetici.ValueMember = "Id";
             cmbYonetici.DataSource = null;
             cmbYonetici.DataSource = GetirYoneticiler();
+            cmbYonetici.DisplayMember = "TamAdi";
+            cmbYonetici.ValueMember = "Id";
         }
 
         private void YukleKullaniciTipleri()
@@ -84,6 +84,7 @@ namespace MasrafOtomasyonu
 
             FileHelper.DosyayaYazKullanicilar(_kullanicilar);
             Temizle();
+            YukleYoneticileri();
         }
 
         private void Temizle()
@@ -166,12 +167,17 @@ namespace MasrafOtomasyonu
             seciliKullanici.KullaniciAdi = txtKullaniciAdi.Text.Trim();
             seciliKullanici.Sifre = txtSifre.Text;
             seciliKullanici.Tipi = (KullaniciTipi)cmbKullaniciTipi.SelectedValue;
-            seciliKullanici.YoneticiId = (Guid)cmbYonetici.SelectedValue;
 
-            lstKullanicilar.DataSource = null;  
+            if (cmbYonetici.SelectedValue != null)
+            {
+                seciliKullanici.YoneticiId = (Guid)cmbYonetici.SelectedValue;
+            }
+
+            lstKullanicilar.DataSource = null;
             lstKullanicilar.DataSource = _kullanicilar;
 
             FileHelper.DosyayaYazKullanicilar(_kullanicilar);
+            YukleYoneticileri();
         }
 
         private void btnSil_Click(object sender, EventArgs e)
@@ -206,6 +212,7 @@ namespace MasrafOtomasyonu
                 lstKullanicilar.DataSource = _kullanicilar;
 
                 FileHelper.DosyayaYazKullanicilar(_kullanicilar);
+                YukleYoneticileri();
             }
         }
     }
