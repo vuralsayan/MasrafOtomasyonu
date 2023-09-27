@@ -105,9 +105,6 @@ namespace MasrafOtomasyonu
                 default:
                     break;
             }
-
-
-
         }
 
         private void EkleMasrafListView(Masraf masraf)
@@ -285,6 +282,114 @@ namespace MasrafOtomasyonu
             {
                 MessageBox.Show("Lütfen silmek için bir masraf seçiniz", "Silme İşlemi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
+            }
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            cmnuOnayBekliyor.Enabled = false;
+            cmnuOnaylandi.Enabled = false;
+            cmnuReddedildi.Enabled = false;
+            cmnuOdendi.Enabled = false;
+
+            if (lvMasraflar.SelectedIndices != null && lvMasraflar.SelectedIndices.Count > 0)
+            {
+                switch (Degiskenler.GirisYapanKullanici.Tipi)
+                {
+                    case KullaniciTipi.yonetici:
+                        cmnuOnayBekliyor.Enabled = true;
+                        cmnuOnaylandi.Enabled = true;
+                        cmnuReddedildi.Enabled = true;
+                        break;
+                    case KullaniciTipi.muhasebeci:
+                        cmnuOdendi.Enabled = true;
+                        break;
+                    case KullaniciTipi.personel:
+                    case KullaniciTipi.admin:
+                    default:
+                        break;
+                }
+
+                int index = lvMasraflar.SelectedIndices[0];
+                ListViewItem listViewItem = lvMasraflar.SelectedItems[0];
+                Masraf masraf = listViewItem.Tag as Masraf;
+
+                switch (masraf.Durum)
+                {
+                    case MasrafDurumu.OnayBekliyor:
+                        cmnuOnayBekliyor.Enabled = false;
+                        break;
+                    case MasrafDurumu.Onaylandı:
+                        cmnuOnaylandi.Enabled = false;
+                        break;
+                    case MasrafDurumu.Reddedildi:
+                        cmnuReddedildi.Enabled = false;
+                        break;
+                    case MasrafDurumu.Ödendi:
+                        cmnuOdendi.Enabled = false;
+                        cmnuOnayBekliyor.Enabled = false;
+                        cmnuOnaylandi.Enabled = false;
+                        cmnuReddedildi.Enabled = false;
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+
+
+
+
+        }
+
+        private void cmnuOnayBekliyor_Click(object sender, EventArgs e)
+        {
+            if (lvMasraflar.SelectedIndices != null && lvMasraflar.SelectedIndices.Count > 0)
+            {
+                Masraf masraf = lvMasraflar.SelectedItems[0].Tag as Masraf;
+                masraf.Durum = MasrafDurumu.OnayBekliyor;
+                FileHelper.DosyayaYazMasraflar(_masraflar);
+                YukleMasraflar();
+            }
+        }
+
+        private void cmnuOnaylandi_Click(object sender, EventArgs e)
+        {
+            if (lvMasraflar.SelectedIndices != null && lvMasraflar.SelectedIndices.Count > 0)
+            {
+                Masraf masraf = lvMasraflar.SelectedItems[0].Tag as Masraf;
+                masraf.Durum = MasrafDurumu.Onaylandı;
+                FileHelper.DosyayaYazMasraflar(_masraflar);
+                YukleMasraflar();
+            }
+        }
+
+        private void cmnuReddedildi_Click(object sender, EventArgs e)
+        {
+            if (lvMasraflar.SelectedIndices != null && lvMasraflar.SelectedIndices.Count > 0)
+            {
+                Masraf masraf = lvMasraflar.SelectedItems[0].Tag as Masraf;
+                masraf.Durum = MasrafDurumu.Reddedildi;
+                FileHelper.DosyayaYazMasraflar(_masraflar);
+                YukleMasraflar();
+            }
+        }
+
+        private void cmnuOdendi_Click(object sender, EventArgs e)
+        {
+            if (lvMasraflar.SelectedIndices != null && lvMasraflar.SelectedIndices.Count > 0)
+            {
+                Masraf masraf = lvMasraflar.SelectedItems[0].Tag as Masraf;
+
+                DialogResult sonuc = MessageBox.Show($"{masraf.FisBilgisi.No} fiş numaralı masrafı ödendi yapmak üzeresiniz, onaylıyor musunuz?", "Ödeme Onay İşlemi", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3);
+
+                if (sonuc == DialogResult.Yes)
+                {
+                    masraf.Durum = MasrafDurumu.Ödendi;
+
+                    FileHelper.DosyayaYazMasraflar(_masraflar);
+                    YukleMasraflar();
+                }
             }
         }
     }

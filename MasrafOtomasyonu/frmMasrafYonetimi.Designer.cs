@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -53,6 +54,12 @@
             this.clmFisNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmTutar = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmDurumu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmnuOnayBekliyor = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmnuOnaylandi = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmnuReddedildi = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.cmnuOdendi = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -62,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudFisTutar)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -263,6 +271,7 @@
             this.clmFisNo,
             this.clmTutar,
             this.clmDurumu});
+            this.lvMasraflar.ContextMenuStrip = this.contextMenuStrip1;
             this.lvMasraflar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvMasraflar.FullRowSelect = true;
             this.lvMasraflar.HideSelection = false;
@@ -305,6 +314,52 @@
             this.clmDurumu.Text = "Durumu";
             this.clmDurumu.Width = 90;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmnuOnayBekliyor,
+            this.cmnuOnaylandi,
+            this.cmnuReddedildi,
+            this.toolStripMenuItem1,
+            this.cmnuOdendi});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(241, 171);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // cmnuOnayBekliyor
+            // 
+            this.cmnuOnayBekliyor.Name = "cmnuOnayBekliyor";
+            this.cmnuOnayBekliyor.Size = new System.Drawing.Size(240, 32);
+            this.cmnuOnayBekliyor.Text = "Onay Bekliyor";
+            this.cmnuOnayBekliyor.Click += new System.EventHandler(this.cmnuOnayBekliyor_Click);
+            // 
+            // cmnuOnaylandi
+            // 
+            this.cmnuOnaylandi.Name = "cmnuOnaylandi";
+            this.cmnuOnaylandi.Size = new System.Drawing.Size(240, 32);
+            this.cmnuOnaylandi.Text = "Onaylandı";
+            this.cmnuOnaylandi.Click += new System.EventHandler(this.cmnuOnaylandi_Click);
+            // 
+            // cmnuReddedildi
+            // 
+            this.cmnuReddedildi.Name = "cmnuReddedildi";
+            this.cmnuReddedildi.Size = new System.Drawing.Size(240, 32);
+            this.cmnuReddedildi.Text = "Reddedildi";
+            this.cmnuReddedildi.Click += new System.EventHandler(this.cmnuReddedildi_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(237, 6);
+            // 
+            // cmnuOdendi
+            // 
+            this.cmnuOdendi.Name = "cmnuOdendi";
+            this.cmnuOdendi.Size = new System.Drawing.Size(240, 32);
+            this.cmnuOdendi.Text = "Ödendi";
+            this.cmnuOdendi.Click += new System.EventHandler(this.cmnuOdendi_Click);
+            // 
             // frmMasrafYonetimi
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -327,6 +382,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudFisTutar)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -358,5 +414,11 @@
         private System.Windows.Forms.ColumnHeader clmFisNo;
         private System.Windows.Forms.ColumnHeader clmTutar;
         private System.Windows.Forms.ColumnHeader clmDurumu;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem cmnuOnayBekliyor;
+        private System.Windows.Forms.ToolStripMenuItem cmnuOnaylandi;
+        private System.Windows.Forms.ToolStripMenuItem cmnuReddedildi;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem cmnuOdendi;
     }
 }
