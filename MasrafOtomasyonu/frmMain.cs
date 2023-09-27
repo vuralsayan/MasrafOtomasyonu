@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ganss.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace MasrafOtomasyonu
 {
@@ -152,6 +154,47 @@ namespace MasrafOtomasyonu
         {
             frmMasrafYonetimi frm = new frmMasrafYonetimi();
             frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void mnuPersonelRaporu_Click(object sender, EventArgs e)
+        {
+            frmRapor frm = new frmRapor();
+            frm.Text = "Rapor : Personel Toplam Harcama";
+            frm.MdiParent = this;
+
+            List<PersonelToplamHarcama> data = RaporIslemleri.PersonelToplamHarcamaRaporu();
+
+            frm.ExcelAktarimMetot = (filename) =>
+            {
+                new ExcelMapper().Save(filename, data, "veriler");
+
+            };
+
+            frm.dgvRapor.DataSource = null;
+            frm.dgvRapor.DataSource = data;
+            frm.dgvRapor.Columns["PersonelId"].Visible = false;
+
+            frm.Show();
+        }
+
+        private void mnuMasrafHarcamaRaporu_Click(object sender, EventArgs e)
+        {
+            frmRapor frm = new frmRapor();
+            frm.Text = "Rapor : Masraf Tipine Göre Toplam Harcama";
+            frm.MdiParent = this;
+
+            List<MasrafTipiToplamHarcama> data = RaporIslemleri.MasrafTipiToplamHarcamaRaporu();
+
+            frm.ExcelAktarimMetot = (filename) =>
+            {
+                new ExcelMapper().Save(filename, data, "veriler");
+
+            };
+
+            frm.dgvRapor.DataSource = null;
+            frm.dgvRapor.DataSource = data;
+
             frm.Show();
         }
     }

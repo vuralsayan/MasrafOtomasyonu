@@ -61,7 +61,7 @@
             this.mnuHakkinda});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.Visible = false;
@@ -129,7 +129,7 @@
             // mnuMasraflar
             // 
             this.mnuMasraflar.Name = "mnuMasraflar";
-            this.mnuMasraflar.Size = new System.Drawing.Size(270, 34);
+            this.mnuMasraflar.Size = new System.Drawing.Size(187, 34);
             this.mnuMasraflar.Text = "Masraflar";
             this.mnuMasraflar.Click += new System.EventHandler(this.mnuMasraflar_Click);
             // 
@@ -147,12 +147,14 @@
             this.mnuPersonelRaporu.Name = "mnuPersonelRaporu";
             this.mnuPersonelRaporu.Size = new System.Drawing.Size(308, 34);
             this.mnuPersonelRaporu.Text = "Personel Raporu";
+            this.mnuPersonelRaporu.Click += new System.EventHandler(this.mnuPersonelRaporu_Click);
             // 
             // mnuMasrafHarcamaRaporu
             // 
             this.mnuMasrafHarcamaRaporu.Name = "mnuMasrafHarcamaRaporu";
             this.mnuMasrafHarcamaRaporu.Size = new System.Drawing.Size(308, 34);
             this.mnuMasrafHarcamaRaporu.Text = "Masraf/Harcama Raporu";
+            this.mnuMasrafHarcamaRaporu.Click += new System.EventHandler(this.mnuMasrafHarcamaRaporu_Click);
             // 
             // mnuHakkinda
             // 
