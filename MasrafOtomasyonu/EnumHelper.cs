@@ -35,6 +35,30 @@ namespace MasrafOtomasyonu
 
         }
 
+        public static string GetirMasrafDurumAdi(MasrafDurumu durum)
+        {
+            string sonuc = string.Empty;
+
+            switch (durum)
+            {
+                case MasrafDurumu.OnayBekliyor:
+                    sonuc = "Onay Bekliyor";
+                    break;
+                case MasrafDurumu.Onaylandı:
+                    sonuc = "Onaylandı";
+                    break;
+                case MasrafDurumu.Reddedildi:
+                    sonuc = "Reddedildi";
+                    break;
+                case MasrafDurumu.Ödendi:
+                    sonuc = "Ödendi";
+                    break;
+                default:
+                    break;
+            }
+            return sonuc;
+        }
+
         public static List<KullaniciTipiEnumObjesi> GetirKullaniciTipleriListe()
         {
             List<KullaniciTipiEnumObjesi> liste = new List<KullaniciTipiEnumObjesi>();
@@ -56,7 +80,7 @@ namespace MasrafOtomasyonu
             liste.Add(new KullaniciTipiEnumObjesi
             {
                 KullaniciTipAdi = GetirKullaniciTipiAdi(KullaniciTipi.muhasebeci),
-                KullaniciTipiDegeri = (int)KullaniciTipi.muhasebeci 
+                KullaniciTipiDegeri = (int)KullaniciTipi.muhasebeci
             });
 
             return liste;

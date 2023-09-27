@@ -31,12 +31,6 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnSil = new System.Windows.Forms.Button();
-            this.btnKaydet = new System.Windows.Forms.Button();
-            this.btnYeniEkle = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lvMasraflar = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFisNo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,21 +41,27 @@
             this.cmbMasrafTipi = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtAciklama = new System.Windows.Forms.TextBox();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnSil = new System.Windows.Forms.Button();
+            this.btnKaydet = new System.Windows.Forms.Button();
+            this.btnYeniEkle = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lvMasraflar = new System.Windows.Forms.ListView();
+            this.clmSahibi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmMasrafTipi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmTarih = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmFisNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmTutar = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmDurumu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFisTutar)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudFisTutar)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -79,7 +79,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer1.Size = new System.Drawing.Size(902, 492);
+            this.splitContainer1.Size = new System.Drawing.Size(1001, 492);
             this.splitContainer1.SplitterDistance = 306;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -114,75 +114,6 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(290, 389);
             this.flowLayoutPanel2.TabIndex = 1;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.btnSil);
-            this.flowLayoutPanel1.Controls.Add(this.btnKaydet);
-            this.flowLayoutPanel1.Controls.Add(this.btnYeniEkle);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 416);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(290, 68);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // btnSil
-            // 
-            this.btnSil.Location = new System.Drawing.Point(202, 3);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(85, 38);
-            this.btnSil.TabIndex = 7;
-            this.btnSil.Text = "Sil";
-            this.btnSil.UseVisualStyleBackColor = true;
-            // 
-            // btnKaydet
-            // 
-            this.btnKaydet.Location = new System.Drawing.Point(111, 3);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(85, 38);
-            this.btnKaydet.TabIndex = 6;
-            this.btnKaydet.Text = "Kaydet";
-            this.btnKaydet.UseVisualStyleBackColor = true;
-            // 
-            // btnYeniEkle
-            // 
-            this.btnYeniEkle.Location = new System.Drawing.Point(20, 3);
-            this.btnYeniEkle.Name = "btnYeniEkle";
-            this.btnYeniEkle.Size = new System.Drawing.Size(85, 38);
-            this.btnYeniEkle.TabIndex = 5;
-            this.btnYeniEkle.Text = "Yeni Ekle";
-            this.btnYeniEkle.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.lvMasraflar);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(8);
-            this.groupBox2.Size = new System.Drawing.Size(592, 492);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Masraflar";
-            // 
-            // lvMasraflar
-            // 
-            this.lvMasraflar.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.lvMasraflar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvMasraflar.HideSelection = false;
-            this.lvMasraflar.Location = new System.Drawing.Point(8, 27);
-            this.lvMasraflar.Name = "lvMasraflar";
-            this.lvMasraflar.Size = new System.Drawing.Size(576, 457);
-            this.lvMasraflar.TabIndex = 0;
-            this.lvMasraflar.UseCompatibleStateImageBehavior = false;
-            this.lvMasraflar.View = System.Windows.Forms.View.Details;
             // 
             // label1
             // 
@@ -225,7 +156,13 @@
             // 
             // nudFisTutar
             // 
+            this.nudFisTutar.DecimalPlaces = 2;
             this.nudFisTutar.Location = new System.Drawing.Point(3, 127);
+            this.nudFisTutar.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
             this.nudFisTutar.Name = "nudFisTutar";
             this.nudFisTutar.Size = new System.Drawing.Size(284, 26);
             this.nudFisTutar.TabIndex = 7;
@@ -263,46 +200,123 @@
             this.txtAciklama.Size = new System.Drawing.Size(284, 100);
             this.txtAciklama.TabIndex = 11;
             // 
-            // columnHeader1
+            // flowLayoutPanel1
             // 
-            this.columnHeader1.Text = "Sahibi";
-            this.columnHeader1.Width = 150;
+            this.flowLayoutPanel1.Controls.Add(this.btnSil);
+            this.flowLayoutPanel1.Controls.Add(this.btnKaydet);
+            this.flowLayoutPanel1.Controls.Add(this.btnYeniEkle);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(8, 416);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(290, 68);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // columnHeader2
+            // btnSil
             // 
-            this.columnHeader2.Text = "Masraf Tipi";
-            this.columnHeader2.Width = 100;
+            this.btnSil.Location = new System.Drawing.Point(202, 3);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(85, 38);
+            this.btnSil.TabIndex = 7;
+            this.btnSil.Text = "Sil";
+            this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
-            // columnHeader3
+            // btnKaydet
             // 
-            this.columnHeader3.Text = "Tarih";
-            this.columnHeader3.Width = 80;
+            this.btnKaydet.Location = new System.Drawing.Point(111, 3);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(85, 38);
+            this.btnKaydet.TabIndex = 6;
+            this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
-            // columnHeader4
+            // btnYeniEkle
             // 
-            this.columnHeader4.Text = "Fiş No";
+            this.btnYeniEkle.Location = new System.Drawing.Point(20, 3);
+            this.btnYeniEkle.Name = "btnYeniEkle";
+            this.btnYeniEkle.Size = new System.Drawing.Size(85, 38);
+            this.btnYeniEkle.TabIndex = 5;
+            this.btnYeniEkle.Text = "Yeni Ekle";
+            this.btnYeniEkle.UseVisualStyleBackColor = true;
+            this.btnYeniEkle.Click += new System.EventHandler(this.btnYeniEkle_Click);
             // 
-            // columnHeader5
+            // groupBox2
             // 
-            this.columnHeader5.Text = "Tutar";
-            this.columnHeader5.Width = 80;
+            this.groupBox2.Controls.Add(this.lvMasraflar);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(8);
+            this.groupBox2.Size = new System.Drawing.Size(691, 492);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Masraflar";
             // 
-            // columnHeader6
+            // lvMasraflar
             // 
-            this.columnHeader6.Text = "Durumu";
-            this.columnHeader6.Width = 100;
+            this.lvMasraflar.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clmSahibi,
+            this.clmMasrafTipi,
+            this.clmTarih,
+            this.clmFisNo,
+            this.clmTutar,
+            this.clmDurumu});
+            this.lvMasraflar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvMasraflar.FullRowSelect = true;
+            this.lvMasraflar.HideSelection = false;
+            this.lvMasraflar.Location = new System.Drawing.Point(8, 27);
+            this.lvMasraflar.MultiSelect = false;
+            this.lvMasraflar.Name = "lvMasraflar";
+            this.lvMasraflar.Size = new System.Drawing.Size(675, 457);
+            this.lvMasraflar.TabIndex = 0;
+            this.lvMasraflar.UseCompatibleStateImageBehavior = false;
+            this.lvMasraflar.View = System.Windows.Forms.View.Details;
+            this.lvMasraflar.SelectedIndexChanged += new System.EventHandler(this.lvMasraflar_SelectedIndexChanged);
+            // 
+            // clmSahibi
+            // 
+            this.clmSahibi.Text = "Sahibi";
+            this.clmSahibi.Width = 200;
+            // 
+            // clmMasrafTipi
+            // 
+            this.clmMasrafTipi.Text = "Masraf Tipi";
+            this.clmMasrafTipi.Width = 140;
+            // 
+            // clmTarih
+            // 
+            this.clmTarih.Text = "Tarih";
+            this.clmTarih.Width = 80;
+            // 
+            // clmFisNo
+            // 
+            this.clmFisNo.Text = "Fiş No";
+            this.clmFisNo.Width = 80;
+            // 
+            // clmTutar
+            // 
+            this.clmTutar.Text = "Tutar";
+            this.clmTutar.Width = 80;
+            // 
+            // clmDurumu
+            // 
+            this.clmDurumu.Text = "Durumu";
+            this.clmDurumu.Width = 90;
             // 
             // frmMasrafYonetimi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(922, 512);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1021, 512);
             this.Controls.Add(this.splitContainer1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmMasrafYonetimi";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Masraf Yönetimi";
+            this.Load += new System.EventHandler(this.frmMasrafYonetimi_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -310,9 +324,9 @@
             this.groupBox1.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFisTutar)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudFisTutar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -338,11 +352,11 @@
         private System.Windows.Forms.ComboBox cmbMasrafTipi;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtAciklama;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader clmSahibi;
+        private System.Windows.Forms.ColumnHeader clmMasrafTipi;
+        private System.Windows.Forms.ColumnHeader clmTarih;
+        private System.Windows.Forms.ColumnHeader clmFisNo;
+        private System.Windows.Forms.ColumnHeader clmTutar;
+        private System.Windows.Forms.ColumnHeader clmDurumu;
     }
 }

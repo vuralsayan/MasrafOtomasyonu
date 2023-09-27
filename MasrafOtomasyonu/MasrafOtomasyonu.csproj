@@ -131,6 +131,7 @@
       <DependentUpon>frmMasrafYonetimi.cs</DependentUpon>
     </Compile>
     <Compile Include="Kullanici.cs" />
+    <Compile Include="KullaniciIslemleri.cs" />
     <Compile Include="Masraf.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

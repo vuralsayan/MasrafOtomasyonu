@@ -147,5 +147,12 @@ namespace MasrafOtomasyonu
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void mnuMasraflar_Click(object sender, EventArgs e)
+        {
+            frmMasrafYonetimi frm = new frmMasrafYonetimi();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

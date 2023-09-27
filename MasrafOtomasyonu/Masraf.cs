@@ -12,6 +12,7 @@ namespace MasrafOtomasyonu
         public Guid Id { get; set; }
         public string MasrafTipi { get; set; }
         public string Aciklama { get; set; }
+
         public Fis FisBilgisi { get; set; }
         public MasrafDurumu Durum { get; set; }
 

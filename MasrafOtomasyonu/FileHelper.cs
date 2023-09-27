@@ -14,6 +14,7 @@ namespace MasrafOtomasyonu
     {
         private static string _kullanicilarDosyaYolu = Application.StartupPath + "\\kullanicilar.json";
         private static string _masrafTipleriDosyaYolu = Application.StartupPath + "\\masraf_tipleri.json";
+        private static string _masraflariDosyaYolu = Application.StartupPath + "\\masraflar.json";
         public static void DosyayaYazKullanicilar(List<Kullanici> kullanicilar)
         {
             string json = JsonSerializer.Serialize<List<Kullanici>>(kullanicilar, GetirJsonDosyaAyarlari());
@@ -48,14 +49,28 @@ namespace MasrafOtomasyonu
             return new List<string>();
         }
 
+        public static void DosyayaYazMasraflar(List<Masraf> masraflar)
+        {
+            string json = JsonSerializer.Serialize<List<Masraf>>(masraflar, GetirJsonDosyaAyarlari());
+            File.WriteAllText(_masraflariDosyaYolu, json);
+        }
+        public static List<Masraf> DosyadanOkuMasraflar()
+        {
+            if (File.Exists(_masraflariDosyaYolu))
+            {
+                string json = File.ReadAllText(_masraflariDosyaYolu);
+                return JsonSerializer.Deserialize<List<Masraf>>(json, GetirJsonDosyaAyarlari());
+            }
 
+            return new List<Masraf>();
+        }
 
         private static JsonSerializerOptions GetirJsonDosyaAyarlari()
         {
             JsonSerializerOptions options = new JsonSerializerOptions()
             {
-                PropertyNameCaseInsensitive = true,                     
-                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,     
+                PropertyNameCaseInsensitive = true,
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
                 WriteIndented = true
             };
 

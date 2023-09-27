@@ -61,7 +61,7 @@
             this.mnuHakkinda});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 36);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.Visible = false;
@@ -79,19 +79,19 @@
             // mnuOturumKapat
             // 
             this.mnuOturumKapat.Name = "mnuOturumKapat";
-            this.mnuOturumKapat.Size = new System.Drawing.Size(270, 34);
+            this.mnuOturumKapat.Size = new System.Drawing.Size(236, 34);
             this.mnuOturumKapat.Text = "Oturumu Kapat";
             this.mnuOturumKapat.Click += new System.EventHandler(this.mnuOturumKapat_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(267, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(233, 6);
             // 
             // mnuCikis
             // 
             this.mnuCikis.Name = "mnuCikis";
-            this.mnuCikis.Size = new System.Drawing.Size(270, 34);
+            this.mnuCikis.Size = new System.Drawing.Size(236, 34);
             this.mnuCikis.Text = "Çıkış";
             this.mnuCikis.Click += new System.EventHandler(this.mnuCikis_Click);
             // 
@@ -131,6 +131,7 @@
             this.mnuMasraflar.Name = "mnuMasraflar";
             this.mnuMasraflar.Size = new System.Drawing.Size(270, 34);
             this.mnuMasraflar.Text = "Masraflar";
+            this.mnuMasraflar.Click += new System.EventHandler(this.mnuMasraflar_Click);
             // 
             // mnuRaporlar
             // 
@@ -193,6 +194,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
