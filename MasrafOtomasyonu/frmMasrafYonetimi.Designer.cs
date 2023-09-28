@@ -324,39 +324,39 @@
             this.toolStripMenuItem1,
             this.cmnuOdendi});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(241, 171);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(194, 138);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // cmnuOnayBekliyor
             // 
             this.cmnuOnayBekliyor.Name = "cmnuOnayBekliyor";
-            this.cmnuOnayBekliyor.Size = new System.Drawing.Size(240, 32);
+            this.cmnuOnayBekliyor.Size = new System.Drawing.Size(193, 32);
             this.cmnuOnayBekliyor.Text = "Onay Bekliyor";
             this.cmnuOnayBekliyor.Click += new System.EventHandler(this.cmnuOnayBekliyor_Click);
             // 
             // cmnuOnaylandi
             // 
             this.cmnuOnaylandi.Name = "cmnuOnaylandi";
-            this.cmnuOnaylandi.Size = new System.Drawing.Size(240, 32);
+            this.cmnuOnaylandi.Size = new System.Drawing.Size(193, 32);
             this.cmnuOnaylandi.Text = "Onaylandı";
             this.cmnuOnaylandi.Click += new System.EventHandler(this.cmnuOnaylandi_Click);
             // 
             // cmnuReddedildi
             // 
             this.cmnuReddedildi.Name = "cmnuReddedildi";
-            this.cmnuReddedildi.Size = new System.Drawing.Size(240, 32);
+            this.cmnuReddedildi.Size = new System.Drawing.Size(193, 32);
             this.cmnuReddedildi.Text = "Reddedildi";
             this.cmnuReddedildi.Click += new System.EventHandler(this.cmnuReddedildi_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(237, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(190, 6);
             // 
             // cmnuOdendi
             // 
             this.cmnuOdendi.Name = "cmnuOdendi";
-            this.cmnuOdendi.Size = new System.Drawing.Size(240, 32);
+            this.cmnuOdendi.Size = new System.Drawing.Size(193, 32);
             this.cmnuOdendi.Text = "Ödendi";
             this.cmnuOdendi.Click += new System.EventHandler(this.cmnuOdendi_Click);
             // 
@@ -369,7 +369,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmMasrafYonetimi";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Masraf Yönetimi";
             this.Load += new System.EventHandler(this.frmMasrafYonetimi_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

@@ -41,7 +41,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 19);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(12, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 20);
             this.label1.TabIndex = 0;
@@ -50,7 +51,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(56, 66);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(46, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 20);
             this.label2.TabIndex = 1;
@@ -58,34 +60,34 @@
             // 
             // txtKullaniciAdi
             // 
-            this.txtKullaniciAdi.Location = new System.Drawing.Point(108, 16);
+            this.txtKullaniciAdi.Location = new System.Drawing.Point(80, 21);
             this.txtKullaniciAdi.Name = "txtKullaniciAdi";
-            this.txtKullaniciAdi.Size = new System.Drawing.Size(176, 26);
+            this.txtKullaniciAdi.Size = new System.Drawing.Size(176, 32);
             this.txtKullaniciAdi.TabIndex = 2;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(301, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(282, 21);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(160, 107);
+            this.pictureBox1.Size = new System.Drawing.Size(160, 114);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
             // txtSifre
             // 
-            this.txtSifre.Location = new System.Drawing.Point(108, 60);
+            this.txtSifre.Location = new System.Drawing.Point(80, 65);
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.PasswordChar = '*';
-            this.txtSifre.Size = new System.Drawing.Size(176, 26);
+            this.txtSifre.Size = new System.Drawing.Size(176, 32);
             this.txtSifre.TabIndex = 4;
             // 
             // btnGiris
             // 
-            this.btnGiris.Location = new System.Drawing.Point(188, 92);
+            this.btnGiris.Location = new System.Drawing.Point(145, 97);
             this.btnGiris.Name = "btnGiris";
-            this.btnGiris.Size = new System.Drawing.Size(96, 34);
+            this.btnGiris.Size = new System.Drawing.Size(111, 38);
             this.btnGiris.TabIndex = 5;
             this.btnGiris.Text = "Giriş";
             this.btnGiris.UseVisualStyleBackColor = true;
@@ -93,9 +95,9 @@
             // 
             // frmGiris
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(487, 155);
+            this.AcceptButton = this.btnGiris;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(459, 147);
             this.ControlBox = false;
             this.Controls.Add(this.btnGiris);
             this.Controls.Add(this.txtSifre);
@@ -103,11 +105,11 @@
             this.Controls.Add(this.txtKullaniciAdi);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmGiris";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giriş Yapınız";
-            //this.Load += new System.EventHandler(this.frmGiris_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
